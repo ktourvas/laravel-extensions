@@ -12,8 +12,6 @@ return [
     |
     */
 
-    'whitelist' => [
-        '127.0.0.1'
-    ],
+    'whitelist' => explode(',', env('LE_WHITELIST')),
 
 ];
