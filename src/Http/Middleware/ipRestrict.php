@@ -13,7 +13,6 @@ class ipRestrict
     public function __construct()
     {
         $this->whitelist = config('laravel-extensions.whitelist');
-        parent::__construct();
     }
 
     /**
