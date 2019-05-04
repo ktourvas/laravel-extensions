@@ -14,4 +14,8 @@ return [
 
     'whitelist' => explode(',', env('LE_WHITELIST', '127.0.0.1' )),
 
+    'comingsoon' => 'package::path.to.view',
+
+
+
 ];
