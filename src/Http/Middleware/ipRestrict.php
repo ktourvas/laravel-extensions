@@ -32,9 +32,15 @@ class ipRestrict
             $ip = $request->ip();
 
             if(!empty($request->header('x-forwarded-for'))) {
+
                 $exp = explode(",", $request->header('x-forwarded-for'));
-                if(!empty($exp[0])) {
-                    $ip = $exp[0];
+                /**
+                 * make sure to always use the last on the trail
+                 * If a spoofing request comes in the first ip is the one the supposed attack is
+                 * coming from ex. 127.0.0.1,231.231.23.43
+                 */
+                if(!empty($exp)) {
+                    $ip = $exp[(count($exp)-1)];
                 }
             }
 
@@ -43,6 +49,10 @@ class ipRestrict
             }
 
             if( !in_array($ip, $this->whitelist) ) {
+                if(!empty(config('laravel-extensions.comingsoon')) && $request->is('/')) {
+                    return response()
+                        ->view(config('laravel-extensions.comingsoon'), [], 200);
+                }
                 abort(404);
             }
         }
