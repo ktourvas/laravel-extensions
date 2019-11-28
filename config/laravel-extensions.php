@@ -14,6 +14,18 @@ return [
 
     'whitelist' => explode(',', env('LE_WHITELIST', '127.0.0.1' )),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Locales
+    |--------------------------------------------------------------------------
+    |
+    | This option loads the available locales for your application previously
+    | set in .env
+    |
+    */
+
+    'locales' => env('LE_LOCALES', 'en'),
+
     'comingsoon' => 'package::path.to.view',
 
 
