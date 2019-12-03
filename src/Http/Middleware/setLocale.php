@@ -27,7 +27,6 @@ class setLocale
      */
     public function handle($request, Closure $next)
     {
-//        dd($request->segment(1));
         if( in_array($request->segment(1), $this->locales) ) {
             app()->setLocale($request->segment(1));
             return $next($request);

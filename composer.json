@@ -1,6 +1,7 @@
 {
   "name": "ktourvas/laravel-extensions",
-  "type": "collection of laravel based functionality extending classes",
+  "type": "project",
+  "description": "collection of laravel based functionality extending classes",
   "require": {},
   "authors": [
     {
