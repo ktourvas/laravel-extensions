@@ -2,6 +2,7 @@
   "name": "ktourvas/laravel-extensions",
   "type": "project",
   "description": "collection of laravel based functionality extending classes",
+  "license": "MIT",
   "require": {},
   "authors": [
     {
