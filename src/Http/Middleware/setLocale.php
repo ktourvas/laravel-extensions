@@ -27,12 +27,14 @@ class setLocale
      */
     public function handle($request, Closure $next)
     {
-        if( in_array($request->segment(1), $this->locales) ) {
+        if(
+            !empty($request->segment(1) ) &&
+            in_array($request->segment(1), $this->locales)
+        ) {
             app()->setLocale($request->segment(1));
-            return $next($request);
         }
 
-        abort(404);
+        return $next($request);
 
     }
 }
